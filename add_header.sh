@@ -20,13 +20,11 @@
 
  temp=$(mktemp)
 
- cat > "$temp" << EOF
-/**
-* File Name: $name
-* Owner: $owner
-* Last Modified On: $date 
-*/
-EOF
+echo "/**" > "$temp"
+echo " * File Name: $name" >> "$temp"
+echo " * Owner: $owner" >> "$temp"
+echo " * Last Modified On: $date" >> "$temp"
+echo " */" >> "$temp"
 
  cat "$file" >> "$temp"
 
